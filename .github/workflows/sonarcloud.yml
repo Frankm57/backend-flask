@@ -4,7 +4,7 @@ on:
     branches: [ main, dev,production ] # Add your main branch here
   pull_request:
     branches: [ production, dev, test ]
-  types: [ opened, synchronize, reopened ]
+    types: [ opened, synchronize, reopened ]
 jobs:
   sonarqube:
     name: SonarQube Scan
@@ -29,7 +29,7 @@ jobs:
           sonar.tests=frontend-react/src/__tests__,backend-flask/testssonar.exclusions=**/node_modules/**,**/*.test.js,**/*.test.tsx,**/tests/**,**/coverage/**
           sonar.test.inclusions=**/*.test.js,**/*.test.tsx,**/test_*.py
           sonar.python.coverage.reportPaths=backend-flask/coverage.xml
-          sonar.javascript.lcov.reportPaths=frontend￾react/coverage/lcov.info
+          sonar.javascript.lcov.reportPaths=frontend-react/coverage/lcov.info
           sonar.sourceEncoding=UTF-8
           sonar.python.version=3.10
           EOL
@@ -57,7 +57,7 @@ jobs:
           sonar.tests=frontend-react/src/__tests__,backend-flask/testssonar.exclusions=**/node_modules/**,**/*.test.js,**/*.test.tsx,**/tests/**,**/coverage/**
           sonar.test.inclusions=**/*.test.js,**/*.test.tsx,**/test_*.py
           sonar.python.coverage.reportPaths=backend-flask/coverage.xml
-          sonar.javascript.lcov.reportPaths=frontend￾react/coverage/lcov.info
+          sonar.javascript.lcov.reportPaths=frontend-react/coverage/lcov.info
           sonar.sourceEncoding=UTF-8
           sonar.python.version=3.10
           EOL
@@ -65,8 +65,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-        python-version: '3.10'
-        cache: 'pip'
+          python-version: '3.10'
+          cache: 'pip'
 
       - name: Install backend dependencies
         working-directory: backend-flask
@@ -81,5 +81,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
