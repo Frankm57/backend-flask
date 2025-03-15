@@ -43,7 +43,7 @@ jobs:
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.python.version=3
             -Dsonar.sources=src
-            -Dsonar.tests=tests
             -Dsonar.coverage.exclusions=**/migrations/**
             -Dsonar.coverageReportPaths=coverage.xml
             -Dsonar.verbose=true
+            # -Dsonar.tests=tests
