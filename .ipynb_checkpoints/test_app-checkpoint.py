@@ -5,16 +5,10 @@ import jwt
 from datetime import datetime, timedelta
 
 
-class MyIterable:
-    def __init__(self, data):
-        self.data = data
+def divide(a, b):
+    return a / b  
 
-    def __iter__(self):
-        return self  
-
-items = MyIterable([1, 2, 3, 4])
-for item in items:
-    print(item)
+print(divide(5, 0))  
 
 @pytest.fixture
 def client():
