@@ -5,10 +5,10 @@ import jwt
 from datetime import datetime, timedelta
 
 
-def divide(a, b):
-    return a / b  
+# def divide(a, b):
+#     return a / b  
 
-print(divide(5, 0))  
+# print(divide(5, 0))  
 
 @pytest.fixture
 def client():
