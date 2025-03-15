@@ -9,6 +9,10 @@ from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from datetime import datetime
 
+password = os.getenv("DB_PASSWORD")
+if password is None:
+    raise ValueError("DB_PASSWORD environment variable is not set!")
+
 app = Flask(__name__)
 CORS(app)
 
