@@ -25,16 +25,16 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 db = SQLAlchemy(app)
 
-class MyIterable:
-    def __init__(self, data):
-        self.data = data
+# class MyIterable:
+#     def __init__(self, data):
+#         self.data = data
 
-    def __iter__(self):
-        return self  
+#     def __iter__(self):
+#         return self  
 
-items = MyIterable([1, 2, 3, 4])
-for item in items:
-    print(item)
+# items = MyIterable([1, 2, 3, 4])
+# for item in items:
+#     print(item)
 
 # Models
 # Add new model for course enrollment
