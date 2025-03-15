@@ -13,6 +13,7 @@ app = Flask(__name__)
 CORS(app)
 
 ######## Test push code  1758
+## test branch 
 
 # Vulnerable configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///learning.db'
