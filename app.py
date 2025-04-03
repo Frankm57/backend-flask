@@ -8,8 +8,19 @@ import jwt
 from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from datetime import datetime
+import newrelic.agent  # 引入 New Relic 监控模块
 
-
+try:
+    # 初始化 New Relic 监控配置
+    newrelic.agent.initialize(
+        config_file='newrelic.ini',  # 配置文件路径
+        environment=None,            # 使用默认环境配置
+        log_file='stderr',           # 日志输出到标准错误
+        log_level='INFO'             # 日志级别
+    )
+except ImportError:
+    # 如果未安装 newrelic 包，输出提示信息
+    print("New Relic import failed – monitoring disabled")
 app = Flask(__name__)
 CORS(app)
 
